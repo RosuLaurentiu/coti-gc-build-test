@@ -1,0 +1,19 @@
+{
+  "name": "coti-gc-build-test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Executable local checks for the COTI GC Build and Test skill",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.cjs",
+    "compile": "node scripts/compile.cjs"
+  },
+  "devDependencies": {
+    "@coti-io/coti-contracts": "1.2.0",
+    "ethers": "6.16.0",
+    "hardhat": "2.28.6",
+    "solc": "0.8.19"
+  }
+}

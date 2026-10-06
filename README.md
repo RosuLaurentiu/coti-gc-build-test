@@ -1,0 +1,38 @@
+# COTI GC Build and Test
+
+A Codex skill for custom COTI privacy-contract development, testing, and diagnosis.
+
+Start with [SKILL.md](SKILL.md). It covers GC value lifetimes, arithmetic,
+accounting, build identity, mock limitations, native admission, and recovery.
+Detailed guidance loads only when needed.
+
+The skill uses current project rules and tools. It carries no wallets, secrets,
+live permissions, product parameters, or production-readiness claim.
+
+## Use
+
+Use the folder containing `SKILL.md` as the skill package. Place it in your
+Codex skills directory, or ask Codex to use this folder explicitly:
+
+> Use $coti-gc-build-test to build and test this custom COTI contract.
+
+Automatic discovery is enabled by default. The package is independent of its
+source project and does not need the COTI MCP server.
+
+## Validate the example
+
+Requires Node.js 22 and npm. From this repository:
+
+```sh
+npm ci --ignore-scripts --no-audit --no-fund
+npm test
+```
+
+The dependency lock pins COTI contracts 1.2.0 and Solidity 0.8.19.
+Tests compile a small private counter and execute it against a local EVM model.
+The model does not provide encryption or native input authentication.
+See [VALIDATION.md](VALIDATION.md) for the evidence scope and [PLAN.md](PLAN.md)
+for implementation and follow-up work.
+
+The private repository has no open-source license grant. Third-party packages
+retain their own licenses and are installed as dependencies, not copied here.
