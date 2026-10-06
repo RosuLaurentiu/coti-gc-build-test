@@ -3,6 +3,19 @@
 Local validation completed on 2026-10-06. The skill example has no native COTI
 result. Historical diagnostic cases are evaluated offline, not replayed on-chain.
 
+## v0.1.2 update
+
+Added the checkpoint learning rule. It covers demonstrated reusable lessons,
+focused checks, versioned source/installed-copy updates, and removal of obsolete
+guidance within the current task authority. It preserves the build priority.
+
+This is an instruction-only maintenance change. Metadata and document-link checks
+passed. The counter, dependencies and three diagnostic cases are unchanged; the
+v0.1.1 results below remain their evidence. No new native or performance claim.
+
+Current package-lock SHA-256: `de5f211fdf010b7ddc163cd18fe54553b0a67d6cd77a0c6dd00e52a9d50da732`.
+Only the package version fields changed in the lock.
+
 ## v0.1.1 update
 
 - Added guidance for published MPC RPC modes, nested gas forwarding, and runner
@@ -13,7 +26,7 @@ result. Historical diagnostic cases are evaluated offline, not replayed on-chain
 - A paired offline evaluation used the same three cases and model/settings for
   v0.1.0 and v0.1.1. Both scored 15/15 reviewed criteria. No accuracy or speed
   improvement is claimed. [Full results and limits](evals/RESULTS-0.1.1.md).
-- Current package-lock SHA-256:
+- v0.1.1 package-lock SHA-256:
   `7f8ebfe08ef2b3f7e6701eb4bbe1a5185f737531b5e5be19153b1cd6e47b7122`.
   The lock differs from v0.1.0 only in this package's version fields.
 

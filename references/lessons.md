@@ -49,10 +49,25 @@ replaying a transaction or distributing project-private evidence.
 
 ## Keeping the skill useful
 
-Record a new lesson only when it changes a decision and has a source or
-reproducer. Put version-dependent details in references. Link large project
-evidence from that project, not from a globally portable skill. Recheck changed
-dependencies. Remove obsolete guidance with a recoverable Git change.
+At a stable build checkpoint, consider whether a confirmed failure, successful
+simplification, changed dependency, or repeated wasted work reveals a reusable
+lesson. Keep it only if it changes a future decision. Record the supporting
+source or reproducer, applicable versions, and the expected behavior. An
+unresolved hypothesis remains in project evidence.
 
-Prefer one specific correction over a new universal process rule. Preserve the
-user's accepted product and current authorization.
+Finish the requested build step before doing skill maintenance. Within the
+current task's authority, edit the repository source, preserve local changes,
+and correct the relevant reference instead of adding duplicate rules. Add or
+update a focused reproducer or decision replay when the guidance changes
+behavior. Run affected checks and reuse unchanged evidence. Record results and
+limits, version the change, and refresh the installed copy from that validated
+revision. Publication and installation still require applicable user authority;
+this skill does not grant it. If maintenance is outside the task's scope, record
+one concise improvement candidate in the existing checkpoint and continue the
+build.
+
+Keep private project artifacts, wallets, secrets, product policy and live
+permissions in their owning project. Put portable version-specific details in
+references. Remove obsolete or redundant guidance through a recoverable Git
+change. A skill should become more useful, not merely longer. Do not create a
+separate lesson database, background job, or review gate for every test.
