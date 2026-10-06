@@ -7,7 +7,9 @@ const root = path.resolve(__dirname, "..");
 test("all local Markdown links in the skill package resolve inside the repository", () => {
   const documents = [
     "SKILL.md", "README.md", "PLAN.md", "VALIDATION.md",
-    "references/gc-rules.md", "references/build-test.md", "references/lessons.md"
+    "references/gc-rules.md", "references/build-test.md", "references/lessons.md",
+    "references/native-diagnostics.md", "evals/CASES.md", "evals/RUBRIC.md",
+    "evals/RESULTS-0.1.1.md", "evals/results/v0.1.0.md", "evals/results/v0.1.1.md"
   ];
   for (const file of documents) {
     const body = fs.readFileSync(path.join(root, file), "utf8");

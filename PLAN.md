@@ -5,7 +5,8 @@ Requested 2026-10-06: create a separate skill project and GitHub repository.
 ## Build now
 
 One portable skill, owned by this repository. Keep its entrypoint short.
-Use three focused references: GC rules, build/test workflow, and lessons/diagnosis.
+Use focused references for GC rules, build/test workflow, lessons/diagnosis,
+and native RPC, gas and reader failure cases.
 Ship one original private-counter example with pinned dependencies and focused
 local tests. Preserve project-specific policy in the consuming project.
 
@@ -21,6 +22,20 @@ local tests. Preserve project-specific policy in the consuming project.
 
 Stop on an unexplained failure or unsupported claim. Preserve the tested invariant.
 
+## v0.1.1 checkpoint
+
+Requested 2026-10-06: add the three demonstrated diagnostic gaps and compare
+old/revised behavior on the saved failure cases.
+
+- [x] Add focused RPC mode, gas forwarding and runner-read guidance.
+- [x] Preserve source-version limits and current-project authority.
+- [x] Compare isolated baseline/revised agents on three identical offline cases.
+- [x] Run the affected package checks and record results without a speed claim.
+
+Both versions passed all 15 reviewed replay criteria. See
+[validation](VALIDATION.md) and [replay results](evals/RESULTS-0.1.1.md).
+This checkpoint changes the reusable skill; it does not advance a project release.
+
 ## Before production
 
 A contract built with this skill still needs current-candidate native
@@ -30,7 +45,7 @@ A native trial requires its own applicable authority and finite run inputs.
 
 ## Next action
 
-Use this first version on the next requested COTI contract task. Check compatibility
+Use the installed version on the next requested COTI contract task. Check compatibility
 with that project's installed dependencies. Improve the skill only from a
 demonstrated defect or useful new evidence. The local result is in
 [VALIDATION.md](VALIDATION.md); native example validation remains a separate scope.

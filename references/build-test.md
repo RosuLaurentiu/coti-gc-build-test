@@ -53,6 +53,10 @@ policy, and direct recovery. Keep one sender owner per nonce stream. Reserve the
 funds and attempts needed for recovery. Never commit secrets or signed private
 inputs to the evidence package.
 
+Before adding an MPC simulation prerequisite or a private-state read, check the
+[native diagnostics](native-diagnostics.md) for supported RPC modes, clock
+sampling, lifecycle access and unavailable ciphertext. Reuse established checks.
+
 Send finite supported sequences with a fresh admission check before each send.
 After confirmation, reconcile receipts and independent accounting. If a send is
 uncertain, reconcile its nonce/hash before considering any retry.
@@ -69,12 +73,16 @@ A table of GC operation costs is an estimate, not complete transaction fit.
 Splitting work can reduce peak usage and increase total cost or latency.
 [Official cost table](https://docs.coti.io/coti-documentation/build-on-coti/core-concepts/secure-operations-and-gas)
 
-Estimation may differ from native execution. The example's validity-style guard
-supports a tested model in which boolean decryption returns true during
-estimation. This is a version/network-sensitive compatibility case, not a claim
-about every COTI node. Verify the current native behavior before relying on it.
-Retain real rejection checks and measured headroom. Never bypass an unexplained
-revert merely because another RPC method succeeds.
+Separate gas consumed from minimum supplied gas through nested calls, RPC
+simulation capacity, and transaction/block limits. Use the exact call tree and
+check [forwarding and estimation](native-diagnostics.md#gas-consumed-gas-supplied-and-rpc-capacity)
+when an isolated callee passes but the entry point fails.
+
+The counter's estimator test models a placeholder boolean result. The
+[pinned node mode evidence](native-diagnostics.md#rpc-execution-modes) explains
+why an estimate does not validate real private computation. Verify the applicable
+version and path. Retain rejection checks and measured headroom; never bypass an
+unexplained revert merely because another RPC method succeeds.
 
 ## Acceptance
 

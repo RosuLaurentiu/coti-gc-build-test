@@ -21,7 +21,7 @@ source project and does not need the COTI MCP server.
 
 ## Validate the example
 
-Requires Node.js 22 and npm. From this repository:
+Requires Node.js 22 or later and npm. From this repository:
 
 ```sh
 npm ci --ignore-scripts --no-audit --no-fund
@@ -33,6 +33,12 @@ Tests compile a small private counter and execute it against a local EVM model.
 The model does not provide encryption or native input authentication.
 See [VALIDATION.md](VALIDATION.md) for the evidence scope and [PLAN.md](PLAN.md)
 for implementation and follow-up work.
+
+For skill maintainers, [diagnostic replays](evals/CASES.md) and their
+[evaluation rubric](evals/RUBRIC.md) cover RPC modes, forwarded gas, and runner
+reads. These are offline decision tests, separate from the executable counter.
+The [v0.1.1 comparison](evals/RESULTS-0.1.1.md) records equal results for both
+versions; it does not establish a speed or accuracy gain.
 
 The private repository has no open-source license grant. Third-party packages
 retain their own licenses and are installed as dependencies, not copied here.

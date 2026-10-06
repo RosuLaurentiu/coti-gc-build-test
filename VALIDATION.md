@@ -1,6 +1,21 @@
 # Validation scope
 
-Local validation completed on 2026-10-06. No native COTI result is claimed.
+Local validation completed on 2026-10-06. The skill example has no native COTI
+result. Historical diagnostic cases are evaluated offline, not replayed on-chain.
+
+## v0.1.1 update
+
+- Added guidance for published MPC RPC modes, nested gas forwarding, and runner
+  time/private-read/provider handling. The counter and dependencies are unchanged.
+- `npm test`: 11 passed, 0 failed, 0 skipped; 26.83 seconds. This includes real
+  compilation, local counter/model checks and the expanded document-link check.
+- The standard skill metadata validator passed.
+- A paired offline evaluation used the same three cases and model/settings for
+  v0.1.0 and v0.1.1. Both scored 15/15 reviewed criteria. No accuracy or speed
+  improvement is claimed. [Full results and limits](evals/RESULTS-0.1.1.md).
+- Current package-lock SHA-256:
+  `7f8ebfe08ef2b3f7e6701eb4bbe1a5185f737531b5e5be19153b1cd6e47b7122`.
+  The lock differs from v0.1.0 only in this package's version fields.
 
 ## Baseline
 
@@ -11,7 +26,7 @@ Local validation completed on 2026-10-06. No native COTI result is claimed.
 - Client: ethers 6.16.0.
 - Compiler: optimizer enabled, 200 runs, Paris EVM target.
 
-## Results
+## Initial v0.1.0 results
 
 `npm test`: 11 passed, 0 failed, 0 skipped. Terminal duration: 26.60 seconds.
 
@@ -35,7 +50,7 @@ For diagnosis, it selected recovery of the exact deployed build and comparison
 of same-state evidence before changing a guard or sending a transaction.
 No blocking guidance defect was found. That generated contract was not executed.
 
-## Exact local inputs
+## Initial v0.1.0 inputs
 
 SHA-256:
 

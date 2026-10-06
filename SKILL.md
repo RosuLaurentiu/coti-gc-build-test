@@ -2,7 +2,7 @@
 name: coti-gc-build-test
 description: Build, test, and diagnose custom COTI Solidity contracts that use garbled-circuit privacy. Use for MpcCore value lifetimes, private arithmetic, custody and recovery checks, native transaction fit, or differences between local mocks and COTI execution.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # COTI GC Build and Test
@@ -46,6 +46,8 @@ small and large supported values.
 ## Build and verify in short steps
 
 Use [build and test](references/build-test.md) for the relevant sequence.
+For RPC mode differences, nested gas fit, or private-state reader failures, read
+[native diagnostics](references/native-diagnostics.md) before adding runner gates.
 
 1. Check actual library interfaces, imports, storage layout, and mock operations.
    Compile the complete affected linked graph, including deployment constructors.
