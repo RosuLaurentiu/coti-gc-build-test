@@ -1,7 +1,28 @@
 # Validation scope
 
-Local validation completed on 2026-10-06. The skill example has no native COTI
-result. Historical diagnostic cases are evaluated offline, not replayed on-chain.
+Latest guidance validation: 2026-10-07. The skill example's executable local
+checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
+cases are evaluated offline, not replayed on-chain.
+
+## v0.1.3 update
+
+Added guidance for candidate/action/phase admission, phase gas evidence, and
+pending private-settlement verification. Public runtime identity, receipt success
+and metadata do not grant send permission or private-accounting acceptance.
+
+- Standard skill metadata validation passed.
+- The expanded local Markdown-link check passed: 1 test, 0 failures.
+- One independent offline forward check passed all 10 predefined review criteria.
+  [Actual answer, inputs, results and limits](evals/RESULTS-0.1.3.md).
+- The dependency graph, counter, executable contract tests and original replay
+  cases are unchanged from v0.1.2. Only package version fields changed in the lock.
+  Those executable tests were not rerun; their v0.1.1 results remain valid only
+  within the recorded local scope.
+- v0.1.3 package-lock SHA-256:
+  `43c5e81adc6cee99b35732f2e2973c0da2588742dea440282a31727824d33e21`.
+
+No native transaction, application test, funded recovery, measured performance
+comparison or production acceptance was part of this update.
 
 ## v0.1.2 update
 
@@ -13,7 +34,7 @@ This is an instruction-only maintenance change. Metadata and document-link check
 passed. The counter, dependencies and three diagnostic cases are unchanged; the
 v0.1.1 results below remain their evidence. No new native or performance claim.
 
-Current package-lock SHA-256: `de5f211fdf010b7ddc163cd18fe54553b0a67d6cd77a0c6dd00e52a9d50da732`.
+v0.1.2 package-lock SHA-256: `de5f211fdf010b7ddc163cd18fe54553b0a67d6cd77a0c6dd00e52a9d50da732`.
 Only the package version fields changed in the lock.
 
 ## v0.1.1 update

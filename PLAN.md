@@ -36,6 +36,20 @@ Both versions passed all 15 reviewed replay criteria. See
 [validation](VALIDATION.md) and [replay results](evals/RESULTS-0.1.1.md).
 This checkpoint changes the reusable skill; it does not advance a project release.
 
+## v0.1.3 checkpoint
+
+Requested 2026-10-07: incorporate the latest confirmed integration lessons.
+
+- [x] Add candidate/action/phase admission and pending private-settlement guidance.
+- [x] Keep private project evidence and policy in the consuming project.
+- [x] Test two synthetic cases with an independent forward evaluator: 10/10
+  reviewed criteria, with no comparison or performance claim.
+- [x] Validate metadata, links and the unchanged dependency graph; retain earlier
+  executable counter evidence within its original scope.
+
+See the [replay result](evals/RESULTS-0.1.3.md). The update changes guidance;
+it does not supply missing native funded-recovery or private-settlement proof.
+
 ## Before production
 
 A contract built with this skill still needs current-candidate native

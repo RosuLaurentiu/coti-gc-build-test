@@ -39,6 +39,11 @@ For skill maintainers, [diagnostic replays](evals/CASES.md) and their
 reads. These are offline decision tests, separate from the executable counter.
 The [v0.1.1 comparison](evals/RESULTS-0.1.1.md) records equal results for both
 versions; it does not establish a speed or accuracy gain.
+The [v0.1.3 cases](evals/CASES-0.1.3.md) add action admission and pending-state
+reconciliation. Their [rubric](evals/RUBRIC-0.1.3.md) checks permission boundaries
+and private accounting. The [v0.1.3 result](evals/RESULTS-0.1.3.md) passed all
+10 reviewed criteria in one forward check. This does not establish native safety
+or a measured improvement over earlier versions.
 
 The private repository has no open-source license grant. Third-party packages
 retain their own licenses and are installed as dependencies, not copied here.

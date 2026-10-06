@@ -1,7 +1,7 @@
 # Native diagnostics
 
-Read this when an MPC call and an estimate disagree, a nested path fails fit, or
-a runner cannot verify private state. Use the current project's source, authority,
+Read this when RPC modes disagree, gas fit or action admission is unclear, or
+a runner cannot verify private state or reconcile a pending action. Use the current project's source, authority,
 and accepted evidence. The examples below do not grant live permission.
 
 ## RPC execution modes
@@ -100,3 +100,56 @@ ciphertext; legitimate encrypted zero; supported and forbidden terminal reads;
 provider lifetime; and uncertain-send reconciliation when the changed path uses
 it. Reuse unchanged contract evidence. Add no general requirement for a fresh
 deployment or full suite to repair a reader.
+
+## Admission for each candidate, action and phase
+
+A verified runtime establishes code identity. It does not admit every action or
+prove its private inputs, gas fit, or recovery. Use an explicit candidate registry;
+keep old candidate identities available for historical reads and pending records.
+Changing the default candidate must not silently rebind those records.
+
+Bind each send decision to the chain, exact candidate and ABI, actor/session,
+action and phase, full calldata or authenticated operation/context commitment,
+and applicable expiry. A selector or global `candidateReady` flag is insufficient.
+Some protocols learn the Accept context only after Quote is mined; check each
+phase with its actual inputs. Recheck identity, state and permission before signing.
+
+Keep gas evidence by phase. Separate a measured cost, a permitted supplied-gas
+ceiling, a scoped reuse of older evidence, and a local trial value. Reuse must
+identify the unchanged path and valid bindings. A local recovery result is not
+native funded recovery; an unfunded cancel or a different capital exit is not
+proof for that path. Missing proof is an evidence gap, not a demonstrated defect.
+A ceiling cannot replace a failed fresh estimate or grant send permission.
+
+Enforce current holds in both the adapter and shared sender before estimation,
+reservation or signing. Check each consumer's own admission: swap eligibility
+must not enable token funding, owner actions, or other consumers by inheritance.
+Test the active hold, wrong candidate/phase/full call/session, expiry and failed
+estimate in the affected sender path. Update stale fixtures to select their
+historical candidate; do not weaken the current guard to make them pass.
+
+## Pending records and private settlement
+
+A saved pending status, consumed quote, timeout, or successful transaction receipt
+does not alone prove private delivery or refund. Treat saved metadata as a lookup
+aid. Bind the canonical transaction and receipt to the chain, candidate, full call,
+mode and phase, and bind private reads to the authorized actor/session and
+operation context. Use the protocol's stage-allowed protected results and
+independent accounting before accepting a private terminal result.
+
+If ciphertext is absent, malformed, or cannot be authenticated or decrypted,
+retain unavailable or blocked verification. A capability reload or public status
+refresh must not clear that state without new valid evidence. Verify a legitimate
+encrypted zero under the protocol; do not substitute zero for a failed read.
+
+When authority permits, reconcile an existing receipt through read-only paths
+while sends remain held. Report public transaction status separately from private
+accounting and signing readiness. Read-only reconciliation must not reserve a new
+send, restore permission, or claim private settlement from public metadata.
+
+An account, chain, wallet or session change invalidates prepared signing inputs.
+Reconcile the old operation under its original identity; obtain the required
+authorized context for private reads without weakening access controls. Do not
+replay an unknown action. Test reloads after blocked verification, context changes,
+a consumed quote without delivery proof, and a valid terminal proof. Correct a
+test's unsupported completion expectation instead of bypassing the guard.
