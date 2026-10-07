@@ -44,6 +44,23 @@ Contract addresses, senders, selectors, transaction timing, and other public
 metadata still require a stated disclosure policy. A revert driven by a secret
 reveals the tested condition. Only use that behavior when the product permits it.
 
+## Access across time
+
+For contracts with membership, key epochs or optional sharing, define who can
+read which data before joining, while authorized, after removal and after rejoin.
+Separate access to past data from access to future data. Bind each grant or
+snapshot to its record and recipient, plus the relevant revision, status,
+membership generation or key epoch. Do not let an old grant become valid again
+by accident. Use the protocol's intended historical-access rule.
+
+Keep required participant terms separate from optional disclosures. Consent to
+share one record or its escrowed amount does not authorize a wallet-wide view.
+Test wrong recipients, stale snapshots, removal/rejoin and revoke/regrant.
+Revocation or key rotation cannot erase plaintext or keys already received.
+Check nonce uniqueness within the actual encryption key and domain; changing an
+epoch label alone does not prove a new key or safe nonce reuse. Local echo mocks
+do not prove encryption, key entropy or recipient-only decryption.
+
 ## Arithmetic and selection
 
 - Define base units, supported range, intermediate width, and rounding direction.

@@ -78,6 +78,16 @@ general for COTI smart contracts.
 See the [result and limits](evals/RESULTS-0.1.5.md). The unchanged counter and
 historical build evidence retain their recorded scope.
 
+## v0.1.6 checkpoint
+
+- Added general access, custody and policy-change recovery checks to existing
+  references; retained a short entrypoint and added practical usage prompts.
+- Replaced current operating examples with synthetic inputs and labeled old
+  answer summaries without changing historical scores or Git history.
+- Passed metadata and link checks. The lead reviewed the changed guidance;
+  no independent replay was run. Executable examples and dependencies are
+  unchanged. See the [maintenance record](evals/RESULTS-0.1.6.md).
+
 ## Before production
 
 A contract built with this skill still needs current-candidate native

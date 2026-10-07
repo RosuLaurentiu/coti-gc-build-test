@@ -2,20 +2,25 @@
 
 Date: 2026-10-06. Scope: one offline paired diagnostic run. No native action.
 
+Historical record: v0.1.6 replaced the current cases with synthetic inputs and
+expanded the rubric. The hashes and scores below describe the original run,
+not the current case file. The two answer files now contain redacted summaries.
+Original measurements remain in older Git history; no rerun is implied.
+
 ## Inputs and method
 
 - Baseline: v0.1.0 at commit `da21f8e76cd0b03ac3907c7bef3dbd77e01ffa3e`.
 - Revised instructions: v0.1.1, same example and dependency versions.
 - Two independent agents, each with an empty conversation history, one skill
-  snapshot and identical [raw cases](CASES.md). Same model: GPT-6 Astra, High.
+  snapshot and identical original raw cases. Same model: GPT-6 Astra, High.
 - The agents were restricted to their snapshot and the shared case file.
-  They did not receive the [review rubric](RUBRIC.md), the other output, or the
+  They did not receive the original review rubric, the other output, or the
   historical diagnosis. Public source excerpts were included as raw evidence.
 - Three case answers per version, one run per version. The lead reviewed the
   actual answers against the 15 predefined criteria; grading was not blind.
-- [Baseline answer](results/v0.1.0.md) and [revised answer](results/v0.1.1.md)
-  retain the outputs with punctuation normalized to ASCII. Proposed pseudocode
-  was not executed.
+- [Baseline summary](results/v0.1.0.md) and [revised summary](results/v0.1.1.md)
+  retain the reviewed decisions with project measurements removed. They are not
+  verbatim answers. Proposed pseudocode was not executed.
 
 SHA-256 of evaluated inputs:
 
@@ -31,7 +36,7 @@ SHA-256 of evaluated inputs:
 | Case | v0.1.0 | v0.1.1 | Observed final disposition in both |
 | --- | ---: | ---: | --- |
 | RPC-1 | 5/5 | 5/5 | Correct the added MPC call gate locally; retain supported reads and all finite native admission/verification checks. Live node revision and native validity remain unproved. |
-| GAS-1 | 5/5 | 5/5 | Use a fresh estimate/admission check for the exact derivative. State 0.39% modeled simulation margin separately from transaction headroom. No unconditional send or broad cost claim. |
+| GAS-1 | 5/5 | 5/5 | Use a fresh estimate/admission check for the exact derivative. State the narrow modeled simulation margin separately from transaction headroom. No unconditional send or broad cost claim. |
 | READ-1 | 5/5 | 5/5 | Correct clock sampling, lifecycle reader, unavailable evidence, and provider lifetime. Check independent accounting; no funded-refund claim. |
 | Total | 15/15 | 15/15 | No critical failure observed. |
 

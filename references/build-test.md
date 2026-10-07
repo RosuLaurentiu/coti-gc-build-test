@@ -15,7 +15,9 @@ and complete init code, including constructor arguments, against the target
 network's limits and the project's growth margin. A file split is not proof of a
 smaller runtime. Inspect emitted artifacts and source maps when duplication is
 suspected. A constructor-created child must match the image embedded in its actual
-parent compilation, including links and immutables.
+parent compilation, including links and immutables. Derive build-info identifiers
+from the loaded artifact rather than a hard-coded source alias; do not waive a
+bytecode mismatch between isolated and complete builds.
 
 ## Local evidence
 
@@ -41,6 +43,24 @@ For accounting paths, as applicable, check:
 Cheap checks should catch wrong ABI identities, missing mock operations, stale
 imports, and changed storage layouts before a long suite. Reuse supported runner
 exports. Do not extract and evaluate source strings to assemble a runner.
+
+## Verify custody and token policy
+
+For supported tokens with exact-transfer semantics, verify both the sender's
+debit and the recipient's credit on collection and release. A success return or
+recipient credit alone can hide a missing debit. Test no-op, fee-taking and
+credit-without-debit fixtures, callbacks and full rollback. Reject unsupported
+semantics; this does not require support for every token. For private amounts,
+use authorized private accounting and independent checks without exposing wallet
+balances or changing the agreed disclosure policy.
+
+A token name or interface marker does not prove its current privacy behavior.
+Check the relevant runtime identity and configuration. Test configuration changes
+after funds enter custody. Separate rules for new admission or settlement from
+recovery of recorded liabilities. A policy change must not silently strand an
+existing exit, but it does not justify trusting changed code or bypassing custody,
+recipient authorization or transfer checks. Preserve the recorded asset identity
+and revalidate the actual recovery path.
 
 ## Compare privacy outcomes
 
@@ -93,8 +113,8 @@ are protocol choices, not universal requirements.
 ## Native admission
 
 Use current project authorization; preserve specific holds. The skill creates no
-standing live permission. A generic example is not automatically covered by a
-project's DEX-only Testnet permission.
+standing live permission. Permission for one contract or action does not
+automatically cover a different example or operation.
 
 Before an authorized run, bind exact actors, inputs, target, actions, fresh
 nonces/balances/fees, spend/attempt/time limits, transaction fit, confirmation

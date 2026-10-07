@@ -16,6 +16,17 @@ Codex skills directory, or ask Codex to use this folder explicitly:
 
 > Use $coti-gc-build-test to build and test this custom COTI contract.
 
+State the desired behavior, what must stay private, and whether the task is a
+new build, a change, a test or a diagnosis. Supply the repository or failing
+case. The skill uses the project's dependencies and selects relevant checks.
+
+It applies to private tokens, messages, credentials, payments, escrow and other
+custom contracts. For example:
+
+> Use $coti-gc-build-test to check access after membership and key changes.
+
+> Use $coti-gc-build-test to diagnose this failed private transfer from its exact build.
+
 Automatic discovery is enabled by default. The package is independent of its
 source project and does not need the COTI MCP server.
 
@@ -34,26 +45,16 @@ The model does not provide encryption or native input authentication.
 See [VALIDATION.md](VALIDATION.md) for the evidence scope and [PLAN.md](PLAN.md)
 for implementation and follow-up work.
 
-For skill maintainers, [diagnostic replays](evals/CASES.md) and their
-[evaluation rubric](evals/RUBRIC.md) cover RPC modes, forwarded gas, and runner
-reads. These are offline decision tests, separate from the executable counter.
-The [v0.1.1 comparison](evals/RESULTS-0.1.1.md) records equal results for both
-versions; it does not establish a speed or accuracy gain.
-The [v0.1.3 cases](evals/CASES-0.1.3.md) add action admission and pending-state
-reconciliation. Their [rubric](evals/RUBRIC-0.1.3.md) checks permission boundaries
-and private accounting. The [v0.1.3 result](evals/RESULTS-0.1.3.md) passed all
-10 reviewed criteria in one forward check. This does not establish native safety
-or a measured improvement over earlier versions.
+For maintainers, [synthetic decision cases](evals/CASES.md) and their
+[rubric](evals/RUBRIC.md) test RPC diagnosis, gas fit, readers, access changes,
+custody and exits after policy changes. They are offline decisions, separate
+from executable contract tests. See the [latest result](evals/RESULTS-0.1.6.md)
+and [validation history](VALIDATION.md) for actual checks and limits.
+Neither a replay score nor the local model proves native safety.
 
-The [v0.1.4 cases and result](evals/RESULTS-0.1.4.md) cover explicit model-based
-fit admission after a diagnosed RPC limit, independent model/reader verification,
-and measured admission overhead. All 15 reviewed criteria passed in one offline
-forward check; there is no new native or comparative performance claim.
+Share general rules and synthetic cases. Keep private project source and
+operating data in its own repository. Earlier evaluation measurements were
+removed from current files in v0.1.6; older Git history retains those values.
 
-The [v0.1.5 cases and result](evals/RESULTS-0.1.5.md) apply privacy comparisons,
-net recipient guarantees and recovery checks to generic private-job, payment
-and escrow tasks. One offline forward check passed 15/15 reviewed criteria.
-The consuming contract defines its own product rules and failure policy.
-
-The private repository has no open-source license grant. Third-party packages
-retain their own licenses and are installed as dependencies, not copied here.
+This repository has no open-source license grant. Third-party packages retain
+their own licenses and are installed as dependencies, not copied here.

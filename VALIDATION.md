@@ -4,6 +4,27 @@ Latest guidance validation: 2026-10-07. The skill example's executable local
 checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
 cases are evaluated offline, not replayed on-chain.
 
+## v0.1.6 update
+
+Added general access-change, exact-custody and policy-change recovery guidance,
+plus short usage prompts. The main skill is 97 lines.
+
+- Standard skill metadata validation passed.
+- Local Markdown-link validation passed: 1 test, 0 failures.
+- The lead reviewed the changed guidance and synthetic cases. No independent
+  evaluator was run and no new replay score is claimed.
+- A bounded scan of all 40 current package files found none of the checked
+  project identifiers, earlier operating figures or common credential patterns.
+  This is not a complete secret audit. Earlier figures remain in Git history.
+- The example, executable contract tests, dependency graph and invocation
+  settings are unchanged. Their historical local results were not rerun.
+- v0.1.6 package-lock SHA-256:
+  `4ca9db398c06475c22aa0630b09ba657840877f87a9824e8c4ec5d52b2adc132`.
+  Only the package version fields changed in the lock.
+
+See the [maintenance record](evals/RESULTS-0.1.6.md). There is no new native,
+comparative performance or production-safety claim.
+
 ## v0.1.5 update
 
 Added conditional guidance for controlled privacy comparisons, exact recipient

@@ -58,7 +58,8 @@ synthetic examples; use the consuming contract's actual policy.
    success and failure cases. Keep an unresolved frame labelled unresolved.
 
 The detailed rules are in [native diagnostics](native-diagnostics.md).
-The [RPC, gas and reader replays](../evals/CASES.md) and
+The [general decision cases](../evals/CASES.md) cover RPC, gas, readers,
+access changes, exact custody and policy changes after deposit. The
 [admission and pending-state replays](../evals/CASES-0.1.3.md) test decisions
 without sending a transaction or distributing project-private evidence.
 [Runner verification](runner-verification.md) and the
@@ -84,8 +85,15 @@ this skill does not grant it. If maintenance is outside the task's scope, record
 one concise improvement candidate in the existing checkpoint and continue the
 build.
 
-Keep private project artifacts, wallets, secrets, product policy and live
-permissions in their owning project. Put portable version-specific details in
-references. Remove obsolete or redundant guidance through a recoverable Git
-change. A skill should become more useful, not merely longer. Do not create a
-separate lesson database, background job, or review gate for every test.
+Keep private project artifacts, wallets, secrets, product policy, operating
+measurements and live permissions in their owning project. For shared cases,
+use fully synthetic names, amounts, limits and scenarios; changing names alone
+does not remove a distinctive build fingerprint. Public upstream version pins
+and this package's own test results can remain. Check every distributed file,
+including examples and evaluation answers. A cleanup of current files does not
+remove earlier copies from Git history.
+
+Put portable version-specific details in references. Remove obsolete or
+redundant guidance through a recoverable Git change. A skill should become more
+useful, not merely longer. Do not create a separate lesson database, background
+job, or review gate for every test.
