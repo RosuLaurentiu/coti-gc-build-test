@@ -35,6 +35,15 @@ internal plans are intentionally not distributed with this skill.
 | A cheaper primitive makes the overall path worse | Count conversions, storage, no-op, updates, terminal work, retries, and recovery. | Local estimates and native measurements remain separate. |
 | Arithmetic improves a quote but breaks exact spending | Check conservation, final protection, atomic settlement, and complete refunds. | Approximation policy does not relax accounting. |
 
+## Further adversarial cases
+
+[Build and test](build-test.md#compare-privacy-outcomes) covers three portable
+failure patterns: comparing privacy outcomes with different public starting
+states, enforcing a recipient minimum before fees, and deleting recovery state
+while obligations remain. The [v0.1.5 cases](../evals/CASES-0.1.5.md) apply these
+to a private job, payment and escrow. Their product rules and numbers are
+synthetic examples; use the consuming contract's actual policy.
+
 ## Bounded diagnosis
 
 1. Save the exact failing action, candidate, chain/block/time, public state, and

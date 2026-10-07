@@ -4,6 +4,28 @@ Latest guidance validation: 2026-10-07. The skill example's executable local
 checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
 cases are evaluated offline, not replayed on-chain.
 
+## v0.1.5 update
+
+Added conditional guidance for controlled privacy comparisons, exact recipient
+amounts after fees, and complete recovery obligations. The examples apply to
+different COTI contract types and preserve each project's own product rules.
+
+- Standard skill metadata validation passed.
+- Local Markdown-link validation passed: 1 test, 0 failures.
+- One independent offline check passed 15/15 predefined criteria.
+  [Inputs, actual answer, review and limits](evals/RESULTS-0.1.5.md).
+- A post-evaluation clarification covers caught external reverts. It was reviewed
+  by the lead and was not independently replayed.
+- The example, executable contract tests, dependencies and invocation settings
+  are unchanged. Earlier executable and replay results retain their original
+  scope; those checks were not rerun.
+- v0.1.5 package-lock SHA-256:
+  `b59bd08e5a7bd10cf1e80cf6eccca3f24e395401b1862df34ea9397754a4967d`.
+  Only the package's version fields changed in the lock.
+
+This is general COTI smart-contract guidance, not source-project acceptance or
+new live permission.
+
 ## v0.1.4 update
 
 Updated fit guidance for a diagnosed RPC estimation limit under an explicit,

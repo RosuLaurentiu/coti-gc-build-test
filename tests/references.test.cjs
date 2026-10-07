@@ -13,7 +13,9 @@ test("all local Markdown links in the skill package resolve inside the repositor
     "evals/CASES-0.1.3.md", "evals/RUBRIC-0.1.3.md",
     "evals/RESULTS-0.1.3.md", "evals/results/v0.1.3.md",
     "references/runner-verification.md", "evals/CASES-0.1.4.md", "evals/RUBRIC-0.1.4.md",
-    "evals/RESULTS-0.1.4.md", "evals/results/v0.1.4.md"
+    "evals/RESULTS-0.1.4.md", "evals/results/v0.1.4.md",
+    "evals/CASES-0.1.5.md", "evals/RUBRIC-0.1.5.md",
+    "evals/RESULTS-0.1.5.md", "evals/results/v0.1.5.md"
   ];
   for (const file of documents) {
     const body = fs.readFileSync(path.join(root, file), "utf8");

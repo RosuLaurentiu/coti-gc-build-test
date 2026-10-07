@@ -63,6 +63,21 @@ Requested 2026-10-07: apply further confirmed build lessons to the existing skil
 See the [result and limits](evals/RESULTS-0.1.4.md). Source-project native results
 and local prototypes are evidence for guidance, not new acceptance by this skill.
 
+## v0.1.5 checkpoint
+
+Requested 2026-10-07: retain useful archived lessons while keeping the skill
+general for COTI smart contracts.
+
+- [x] Add conditional privacy, recipient-amount and recovery checks.
+- [x] Use synthetic private-job, payment and escrow cases without project policy.
+- [x] Review one independent forward answer: 15/15 predefined criteria; record
+  the separate lead-reviewed clarification about caught external reverts.
+- [x] Validate metadata and links; confirm unchanged dependencies, executable
+  example and invocation settings before publication and installation.
+
+See the [result and limits](evals/RESULTS-0.1.5.md). The unchanged counter and
+historical build evidence retain their recorded scope.
+
 ## Before production
 
 A contract built with this skill still needs current-candidate native

@@ -50,5 +50,10 @@ fit admission after a diagnosed RPC limit, independent model/reader verification
 and measured admission overhead. All 15 reviewed criteria passed in one offline
 forward check; there is no new native or comparative performance claim.
 
+The [v0.1.5 cases and result](evals/RESULTS-0.1.5.md) apply privacy comparisons,
+net recipient guarantees and recovery checks to generic private-job, payment
+and escrow tasks. One offline forward check passed 15/15 reviewed criteria.
+The consuming contract defines its own product rules and failure policy.
+
 The private repository has no open-source license grant. Third-party packages
 retain their own licenses and are installed as dependencies, not copied here.
