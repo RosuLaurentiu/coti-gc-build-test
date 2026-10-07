@@ -134,8 +134,10 @@ deployment or full suite to repair a reader.
 ## Admission for each candidate, action and phase
 
 A verified runtime establishes code identity. It does not admit every action or
-prove its private inputs, gas fit, or recovery. Use an explicit candidate registry;
-keep old candidate identities available for historical reads and pending records.
+prove its private inputs, gas fit, or recovery. Record candidate identity in the
+project's existing deployment records or manifests. Use a registry only when
+multiple candidates need one; a simple workflow does not require that structure.
+Keep old identities available for historical reads and pending records.
 Changing the default candidate must not silently rebind those records.
 
 Bind each send decision to the chain, exact candidate and ABI, actor/session,
@@ -152,9 +154,11 @@ proof for that path. Missing proof is an evidence gap, not a demonstrated defect
 A ceiling alone cannot replace a failed fresh estimate or grant send permission.
 Any model-based trial must meet the separate conditions above.
 
-Enforce current holds in both the adapter and shared sender before estimation,
-reservation or signing. Check each consumer's own admission: swap eligibility
-must not enable token funding, owner actions, or other consumers by inheritance.
+Enforce current holds in the existing execution path before estimation,
+reservation or signing. If the project has an adapter and a shared sender,
+enforce holds at both boundaries. These components are not required for a
+simpler workflow. Check each consumer's own admission: permission for one action
+must not enable other actions or consumers by inheritance.
 Test the active hold, wrong candidate/phase/full call/session, expiry and failed
 estimate in the affected sender path. Update stale fixtures to select their
 historical candidate; do not weaken the current guard to make them pass.
