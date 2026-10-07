@@ -50,6 +50,19 @@ Requested 2026-10-07: incorporate the latest confirmed integration lessons.
 See the [replay result](evals/RESULTS-0.1.3.md). The update changes guidance;
 it does not supply missing native funded-recovery or private-settlement proof.
 
+## v0.1.4 checkpoint
+
+Requested 2026-10-07: apply further confirmed build lessons to the existing skill.
+
+- [x] Distinguish a separately approved model-fit trial from automatic estimate fallback.
+- [x] Add independent model/reader diagnosis and measured-history verification guidance.
+- [x] Check three synthetic cases with an independent evaluator: 15/15 reviewed criteria.
+- [x] Validate metadata and document links; verify unchanged dependencies, executable
+  example and earlier evidence. Preserve all project authority and active runs.
+
+See the [result and limits](evals/RESULTS-0.1.4.md). Source-project native results
+and local prototypes are evidence for guidance, not new acceptance by this skill.
+
 ## Before production
 
 A contract built with this skill still needs current-candidate native

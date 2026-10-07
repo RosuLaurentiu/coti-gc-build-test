@@ -45,5 +45,10 @@ and private accounting. The [v0.1.3 result](evals/RESULTS-0.1.3.md) passed all
 10 reviewed criteria in one forward check. This does not establish native safety
 or a measured improvement over earlier versions.
 
+The [v0.1.4 cases and result](evals/RESULTS-0.1.4.md) cover explicit model-based
+fit admission after a diagnosed RPC limit, independent model/reader verification,
+and measured admission overhead. All 15 reviewed criteria passed in one offline
+forward check; there is no new native or comparative performance claim.
+
 The private repository has no open-source license grant. Third-party packages
 retain their own licenses and are installed as dependencies, not copied here.

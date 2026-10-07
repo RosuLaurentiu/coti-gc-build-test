@@ -4,6 +4,27 @@ Latest guidance validation: 2026-10-07. The skill example's executable local
 checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
 cases are evaluated offline, not replayed on-chain.
 
+## v0.1.4 update
+
+Updated fit guidance for a diagnosed RPC estimation limit under an explicit,
+separate model-admission policy. Added independent model/reader checks and
+measured reuse of immutable validation history while preserving fresh admission.
+
+- Standard skill metadata validation passed.
+- Expanded local Markdown-link check: 1 passed, 0 failed.
+- One independent offline check of three cases passed 15/15 predefined criteria.
+  [Inputs, actual answer, review and limits](evals/RESULTS-0.1.4.md).
+- The counter, executable contract tests, dependencies and earlier evaluation
+  artifacts are unchanged from v0.1.3. The executable counter suite and earlier
+  decision replays were not rerun; their historical results retain their scope.
+- v0.1.4 package-lock SHA-256:
+  `457c6e5e26f3a09cacbd5e20aff5019a2bee5bc70e8839df24732286da9ab9e6`.
+  Only this package's version fields changed in the lock.
+
+No current project runner, manifest, journal, permission or contract was changed.
+This update grants no live gas-estimate exception, native accounting acceptance
+or full-run speed claim.
+
 ## v0.1.3 update
 
 Added guidance for candidate/action/phase admission, phase gas evidence, and

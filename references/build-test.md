@@ -26,7 +26,8 @@ For each mock, list supported operations, widths, auth behavior, ciphertext
 ownership, persistence, and overflow behavior. A plaintext or handle model can
 test application control flow. It does not establish native encryption, signature
 validation, GC lifetime, privacy, native gas, or node behavior. Do not silently
-extend the scope of a passing result.
+extend the scope of a passing result. When model and reader agree but native
+verification fails, check their independence using [runner verification](runner-verification.md).
 
 For accounting paths, as applicable, check:
 
@@ -59,7 +60,9 @@ sampling, lifecycle access and unavailable ciphertext. Reuse established checks.
 
 Send finite supported sequences with a fresh admission check before each send.
 After confirmation, reconcile receipts and independent accounting. If a send is
-uncertain, reconcile its nonce/hash before considering any retry.
+uncertain, reconcile its nonce/hash before considering any retry. For measured
+admission overhead, separate unchanged historical checks from fresh conditions
+using [runner verification](runner-verification.md#measured-admission-overhead).
 
 ## Cost and estimation
 

@@ -35,7 +35,9 @@ headroom, fresh nonce/state checks, spend/attempt/time bounds, recovery capacity
 and canonical receipt plus independent accounting checks. Do not require an
 unsupported MPC simulation to pass. Do not discard an unexplained application
 revert or treat every COTI call as unsupported. Failed estimation and uncertain
-sends still stop. Restricted traces do not justify bypassing access controls.
+sends still stop. A separate model-based trial requires the explicit conditions
+below; an estimate failure cannot switch admission modes automatically.
+Restricted traces do not justify bypassing access controls.
 
 ## Gas consumed, gas supplied, and RPC capacity
 
@@ -67,9 +69,37 @@ a cheaper complete operation.
 
 A local fit model supports only its modeled path. A narrow margin must be stated
 and assessed under the current project's bounds. Confirm a permitted finite
-native path with fresh inputs and recovery; do not guess past a failed estimate,
-increase limits silently, or claim the old native failing instruction is proved
-from a local trace. Never turn one observed RPC ceiling into a COTI-wide limit.
+native path with fresh inputs and recovery. Stop on a failed estimate under the
+current admission policy; do not increase limits silently or claim the old native
+failing instruction is proved from a local trace. Never turn one observed RPC
+ceiling into a COTI-wide limit.
+
+### Explicit model-based admission for a diagnosed RPC limit
+
+A demonstrated endpoint estimation limit can prevent an otherwise feasible phase
+from receiving a native estimate. If current project authority explicitly permits
+model-based admission, prepare a separate finite trial under that policy. Preserve
+the failed run and its manifest. Reconcile any pending send first. This is not an
+automatic fallback or permission to ignore an unexplained application revert.
+
+Bind the model to the exact compiled call path, populated state, inputs, operation
+metadata and pricing source. Include ordinary EVM costs, nested forwarding,
+minimum supplied gas, complete phase cost, model uncertainty and required margin.
+Identify unpriced operations and unsupported input ranges; reject them until the
+model and authority cover them. Distinguish node-source tariffs from native
+measurements. Aggregate calibration does not verify every primitive tariff or
+attest the live endpoint binary, even when a filename says "measurement".
+
+The new admission must identify the permitted phase and model, supplied-gas bound,
+observed network limits, attempt/spend/time limits and direct recovery. Retain
+fresh identity, revisions, deadline, nonce, balance, fee and protected-state checks;
+keep estimates for other paths where their admission still requires them. Stop
+on drift or an unexplained failure. Preserve owner holds and signing restrictions.
+
+After a permitted native action, verify its canonical receipt and independent
+accounting, and compare measured gas with the model. A successful unfunded
+quote-and-cancel proves only that path; it does not prove funded refunds, other
+phases, all input sizes, or the precise cause of an earlier failed estimate.
 
 ## Runner time, reads, and resource lifetime
 
@@ -119,7 +149,8 @@ ceiling, a scoped reuse of older evidence, and a local trial value. Reuse must
 identify the unchanged path and valid bindings. A local recovery result is not
 native funded recovery; an unfunded cancel or a different capital exit is not
 proof for that path. Missing proof is an evidence gap, not a demonstrated defect.
-A ceiling cannot replace a failed fresh estimate or grant send permission.
+A ceiling alone cannot replace a failed fresh estimate or grant send permission.
+Any model-based trial must meet the separate conditions above.
 
 Enforce current holds in both the adapter and shared sender before estimation,
 reservation or signing. Check each consumer's own admission: swap eligibility

@@ -23,6 +23,9 @@ internal plans are intentionally not distributed with this skill.
 | Treating an empty storage slot as encrypted zero | Initialize through GC or explicitly handle the uninitialized case before onboarding. | Official initialization rule; local model tests the application's path. |
 | A test accepts an input that native COTI rejects | Inspect the mock's auth, metadata, width, and ownership behavior before changing production validation. | A mock result cannot settle native validity. |
 | An estimate and call disagree | Bind candidate/state, then check the path's RPC execution mode before adding a simulation gate or changing a guard. | Published node code can explain a method limitation; the live revision and native result still need evidence. |
+| A diagnosed RPC estimate limit is mistaken for a network execution limit | Consider only a separately authorized, phase-bound model trial with complete cost, margin and recovery evidence. | No automatic fallback; source tariffs and aggregate calibration do not attest live per-operation costs. |
+| Model and local reader share a missing state update | Read real compiled getters, derive expectations independently, and retain strict private/protected-state and flow checks. | A local repair cannot accept an unreconciled native transaction. |
+| Recursive history checks consume the trial window | Measure call frequency and separate immutable evidence validation from fresh per-send conditions. | Content-bound local reuse does not prove integrated or native latency. |
 | An isolated callee fits but its entry point fails | Compare consumed and minimum supplied gas across the actual call tree with the observed RPC capacity. | EIP-150 models and an endpoint-specific cap do not identify an unobserved native failing instruction. |
 | A cancellation reader reports zero from a missing receipt | Use the stage-allowed reader; keep missing ciphertext unavailable and check independent accounting. | Unavailable, initialized zero, and verified decrypted zero are different states. |
 | A verified deployment enables every sender or phase | Bind admission to the candidate, action, phase and full call; retain holds and distinguish measured gas from trial ceilings. | Runtime identity and scoped evidence reuse do not grant another consumer permission. |
@@ -49,6 +52,9 @@ The detailed rules are in [native diagnostics](native-diagnostics.md).
 The [RPC, gas and reader replays](../evals/CASES.md) and
 [admission and pending-state replays](../evals/CASES-0.1.3.md) test decisions
 without sending a transaction or distributing project-private evidence.
+[Runner verification](runner-verification.md) and the
+[v0.1.4 replays](../evals/CASES-0.1.4.md) cover diagnosed estimate limits,
+independent expected-state checks and measured admission overhead.
 
 ## Keeping the skill useful
 

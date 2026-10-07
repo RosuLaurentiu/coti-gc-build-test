@@ -1,6 +1,6 @@
 {
   "name": "coti-gc-build-test",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "description": "Executable local checks for the COTI GC Build and Test skill",
   "engines": {
