@@ -2,6 +2,11 @@
 
 Requested 2026-10-06: create a separate skill project and GitHub repository.
 
+Current status, 2026-10-08: v0.1.7 keeps the general build/test workflow and adds
+focused diagnostic lessons in its references. The checkpoints below record skill
+development, not readiness of contracts built with it. See [validation](VALIDATION.md)
+for the checks run at each update and the limits of earlier results.
+
 ## Build now
 
 One portable skill, owned by this repository. Keep its entrypoint short.
@@ -87,6 +92,19 @@ historical build evidence retain their recorded scope.
 - Passed metadata and link checks. The lead reviewed the changed guidance;
   no independent replay was run. Executable examples and dependencies are
   unchanged. See the [maintenance record](evals/RESULTS-0.1.6.md).
+
+## v0.1.7 checkpoint
+
+- Added preparation-freshness checks, exact ciphertext write-set checks and early
+  capture of expected-revert evidence to the existing references.
+- Recorded the intervening maintenance: optional runner components remain
+  conditional; availability, refresh timing, RPC batching and duplicate-read
+  guidance use evidence from the exact path.
+- Kept project identifiers, operating figures and private evidence out of this
+  update. The main skill remains 97 lines; examples and dependencies are unchanged.
+- Used the existing metadata and link checks plus a review of the changed guidance.
+  No new independent evaluation score or native result is claimed. See the
+  [validation record](VALIDATION.md).
 
 ## Before production
 

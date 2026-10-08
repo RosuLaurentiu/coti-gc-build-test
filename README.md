@@ -48,8 +48,8 @@ for implementation and follow-up work.
 For maintainers, [synthetic decision cases](evals/CASES.md) and their
 [rubric](evals/RUBRIC.md) test RPC diagnosis, gas fit, readers, access changes,
 custody and exits after policy changes. They are offline decisions, separate
-from executable contract tests. See the [latest result](evals/RESULTS-0.1.6.md)
-and [validation history](VALIDATION.md) for actual checks and limits.
+from executable contract tests. See [current validation and history](VALIDATION.md)
+for the latest changes, actual checks and limits.
 Neither a replay score nor the local model proves native safety.
 
 Share general rules and synthetic cases. Keep private project source and

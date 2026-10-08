@@ -16,6 +16,13 @@ observation. If one logical value occurs in multiple views, derive every expecte
 copy from the protocol transition; verify market/operation binding and baseline
 consistency. Do not normalize observations to match an expected value.
 
+A zero economic change can still re-encrypt a stored value. Determine the fields
+written by the exact compiled action, branch and direction before allowing raw
+ciphertext differences. Keep all other protected fields fixed. Independently
+verify logical amounts and token flows; a permitted ciphertext change does not
+prove unchanged value. Check zero-change execution, an unexpected field write
+and a wrong logical amount. Do not allow the union of unrelated write sets.
+
 Reproduce the old failure with the faithful reader, then repair only the proven
 model or reader defect. Retain independent token-flow, private-accounting and
 protected-state assertions. Cover other lifecycle actions that change the same

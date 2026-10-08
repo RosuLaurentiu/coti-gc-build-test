@@ -101,12 +101,36 @@ accounting, and compare measured gas with the model. A successful unfunded
 quote-and-cancel proves only that path; it does not prove funded refunds, other
 phases, all input sizes, or the precise cause of an earlier failed estimate.
 
+## Preserve expected-revert evidence
+
+Historical RPC state can be pruned before later review. When an authorized
+expected-revert check runs, retain the sanitized RPC error response and typed
+classification, safe selector, call/context commitment, candidate/ABI and canonical
+block binding. Record a known transaction hash when applicable.
+Keep secrets, signed private inputs and private error arguments out of reports.
+A failed receipt proves failure, not its cause. Distinguish a contemporaneous
+runner witness from an independent historical RPC replay and a local trace.
+
+Pruned state, transport errors or absent revert data mean the reason is
+unavailable; they do not prove the expected rejection. Reuse retained evidence
+only within explicit project acceptance rules and its verified bindings. Preserve
+the failed check and independent accounting. Never switch to that evidence
+automatically or resend a transaction to repair a verification gap.
+
 ## Runner time, reads, and resource lifetime
 
 Sample one clock value when deriving related manifest issue/expiry fields.
 Use the same units and bind any deadline conversion. Still take a fresh time
 and admission sample before each send; an internally consistent old manifest can
 be expired. Test clock movement and expiry without relying on wall-clock sleeps.
+
+Slow private-state preparation can consume the freshness of an earlier public
+head. Refresh public admission data after preparation, then reject identity,
+nonce, balance or relevant state drift. Keep the original private baseline bound
+to its actual observation; a fresh head does not make that baseline current.
+Retain required fresh private checks before signing. Derive relative deadlines at
+the protocol's intended binding point with the approved lifetime and call bindings;
+do not extend a fixed expiry. Check slow reads, stale refreshes and state drift.
 
 For a keeper or refresh service, compare the full revisit interval for each item
 with its validity window. Include reads, confirmation, retries and restart gaps.

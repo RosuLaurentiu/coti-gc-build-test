@@ -4,17 +4,40 @@ Latest guidance validation: 2026-10-08. The skill example's executable local
 checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
 cases are evaluated offline, not replayed on-chain.
 
-## Local maintenance after v0.1.6
+## v0.1.7 update
+
+Added three general lessons: refresh admission after slow preparation without
+relabeling the private baseline; permit ciphertext changes only for the exact
+compiled write set while checking logical values; and capture expected-revert
+evidence before historical RPC state becomes unavailable.
+
+- Standard skill metadata validation passed.
+- Local Markdown-link validation passed: 1 test, 0 failures.
+- The lead reviewed the three additions against the confirmed lessons and checked
+  that stale data, unexpected writes and missing revert evidence still fail.
+  This was a content review, not a new behavioral evaluation.
+- Review and a bounded scan of the added lines found no project identifiers,
+  operating figures, live inputs or checked credential patterns. This is not a
+  complete secret audit; the earlier Git-history limitation below still applies.
+- The executable example, contract tests, dependency graph and invocation settings
+  are unchanged. Earlier executable results were not rerun. No new independent
+  replay, native transaction or performance result is claimed.
+
+The main skill remains 97 lines. Only package version fields changed in the lock.
+v0.1.7 package-lock SHA-256:
+`5af1fedf9b2ba1fc196f0fb2841501958d6d8f9423bbe9653655028aef940319`.
+
+## Maintenance after v0.1.6
 
 Added general guidance for ambiguous availability flags, complete refresh timing,
 RPC batching measurements and evidence-based consolidation of duplicate reads.
 These additions contain no project identifiers, operating figures or live inputs.
 The entrypoint, example code, dependencies and earlier results are unchanged.
 
-This is a local documentation update, reviewed against the confirmed diagnostic
-lessons. No new independent replay, native transaction or performance result is
-claimed. Metadata validation and local Markdown-link validation passed: one
-link test, zero failures.
+This documentation update was published in commit `946cd4c`. The lead reviewed
+it against the confirmed diagnostic lessons. No new independent replay, native
+transaction or performance result is claimed. Metadata and local Markdown-link
+validation passed: one link test, zero failures.
 
 ## v0.1.6 update
 
