@@ -108,11 +108,24 @@ Use the same units and bind any deadline conversion. Still take a fresh time
 and admission sample before each send; an internally consistent old manifest can
 be expired. Test clock movement and expiry without relying on wall-clock sleeps.
 
+For a keeper or refresh service, compare the full revisit interval for each item
+with its validity window. Include reads, confirmation, retries and restart gaps.
+Successful transactions or a fair round do not establish continuous freshness.
+Measure the complete schedule and report stale intervals. Do not extend validity
+or relax rejection rules merely to make the schedule fit.
+
 Distinguish a decrypted zero from unavailable or invalid evidence. A missing
 envelope, zero raw ciphertext, decode error, or failed decryption is not a zero
 balance or a successful refund. Treat an uninitialized value as a logical zero
 only when the exact protocol and a verified public initialization marker establish
 that rule. Otherwise keep the value unavailable and stop dependent accounting.
+
+A public availability flag can combine several failure conditions. Inspect the
+exact getter before assigning a cause or treating a masked zero as a stored value.
+Report only what the returned metadata proves: age can establish staleness while
+the underlying source condition remains unknown. Keep historical record existence
+separate from current availability. Test stale, fresh-unavailable, uninitialized
+and legitimate-zero cases under the actual getter semantics.
 
 Read receipts through the methods allowed at the observed lifecycle stage.
 For example, a destination receipt may be accessible after settlement but not

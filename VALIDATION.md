@@ -1,8 +1,20 @@
 # Validation scope
 
-Latest guidance validation: 2026-10-07. The skill example's executable local
+Latest guidance validation: 2026-10-08. The skill example's executable local
 checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
 cases are evaluated offline, not replayed on-chain.
+
+## Local maintenance after v0.1.6
+
+Added general guidance for ambiguous availability flags, complete refresh timing,
+RPC batching measurements and evidence-based consolidation of duplicate reads.
+These additions contain no project identifiers, operating figures or live inputs.
+The entrypoint, example code, dependencies and earlier results are unchanged.
+
+This is a local documentation update, reviewed against the confirmed diagnostic
+lessons. No new independent replay, native transaction or performance result is
+claimed. Metadata validation and local Markdown-link validation passed: one
+link test, zero failures.
 
 ## v0.1.6 update
 
