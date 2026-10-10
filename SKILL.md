@@ -1,97 +1,90 @@
 ---
 name: coti-gc-build-test
-description: Build, test, and diagnose custom COTI Solidity contracts that use garbled-circuit privacy. Use for MpcCore value lifetimes, private arithmetic, custody and recovery checks, native transaction fit, or differences between local mocks and COTI execution.
+description: Build and improve COTI Solidity contracts with garbled-circuit privacy. Use for contract design, MpcCore value lifetimes, private arithmetic and accounting, gas and code-size efficiency, and diagnosis of local/native execution differences.
 metadata:
-  version: "0.1.7"
+  version: "0.1.8"
 ---
 
 # COTI GC Build and Test
 
-Produce a usable contract change with evidence for its stated scope. Establish the
-cause of a failure before changing its protection. Keep assumptions and unproved
-behavior explicit. Apply the workflow across COTI contract types; select only
-checks relevant to the contract's behavior and threat model.
+Build correct, private and efficient smart contracts. Help the user choose a
+simple design, avoid known COTI mistakes, and deliver working contract behavior.
+Tests support that result. Measure progress by usable behavior and demonstrated
+improvements in cost or reliability, not by test counts or verification artifacts.
 
-## Start with the requested result
+## Build the requested capability
 
-Read the applicable project instructions and current task. Recover the exact
-source, dependency lock, compiler settings, ABI, deployed candidate when relevant,
-and any pending operation or owner hold. Use the project's code discovery tools
-and verify stale or missing results against source.
+Read the project instructions, current task, existing implementation and relevant
+library interfaces. Recover pending operations and owner holds before live work.
+Use the project's tools and existing checkpoint; keep planning brief and scoped
+to the requested result. This skill requires no particular framework or planner.
 
-Select the work actually requested: new contract, bounded change, local test,
-native check, or diagnosis. Use existing build and runner interfaces. This skill
-does not require a particular MCP server, framework, planner, or repository.
-Routine standard-token operations can use the project's dedicated token tools.
+Choose the simplest design that meets the behavior, privacy and accounting rules.
+Reuse existing modules and runner interfaces. Keep responsibilities clear; add an
+abstraction only when it solves a current need. Routine standard-token operations
+can use the project's dedicated tools.
 
-Before implementation, record a short plan with the intended behavior, files,
-inputs, affected checks, stop condition, and next consumer. Follow established
-authority. A skill does not grant permission to sign, deploy, spend, publish, or
-change a privacy or trust boundary.
+Use [GC rules](references/gc-rules.md) for value lifetimes, ciphertext ownership,
+private arithmetic and viewer access. Check API signatures in the installed
+package. Define what must remain private and what public observations may reveal.
+A secret-dependent result, revert or work shape can disclose information; apply
+the project's threat model rather than claiming complete secrecy.
 
-## Establish the privacy and accounting rules
+For asset flows, preserve exact debits, credits, fees, refunds and rollback.
+Choose widths, scales and rounding for the supported amount range. Numerical
+approximation must not weaken spending limits or recipient guarantees.
 
-Read [GC rules](references/gc-rules.md) for types, persistence, arithmetic,
-and access across membership, consent or key changes. Resolve API spelling and
-signatures from the installed package.
+Improve cost where it affects the requested path: avoid unnecessary secure
+operations, conversions, storage and module calls. Assess tradeoffs across the
+complete operation, including no-fill and recovery. Use [build and test](references/build-test.md)
+for linked runtime/init-code fit and complete cost measurement. A cheaper primitive
+or a smaller source file does not prove a cheaper or deployable contract.
 
-Write down what must remain private and what observers may learn from public
-inputs, outputs, errors, events, storage, calls, transaction count, and timing.
-A decrypted validity bit is a disclosure. Fixed work shape can be required by the
-project's threat model; it is not a claim that all side channels are removed.
+## Check the changed behavior
 
-For asset flows, state the conservation, custody, refund, and rollback invariants.
-Keep numeric approximation separate from exact debits and credits. Select widths
-and scales from supported amounts, intermediates, and rounding rules. Test both
-small and large supported values.
+Select only the checks needed for the changed risk and the requested result.
+Use existing tests and runners. A new harness, wrapper, evidence package or review
+layer needs a concrete defect or requirement that existing tools cannot cover.
+Fix that gap with the smallest useful change, then resume product integration.
+References are conditional guidance, not a checklist to run on every task.
 
-## Build and verify in short steps
+Compile the affected linked graph when contract code changes. Check the changed
+arithmetic, access, lifecycle and accounting boundaries with focused tests. Exercise
+actual module interfaces when integration changes. State mock limits: a local model
+does not prove native encryption, authentication, GC lifetime or transaction fit.
 
-Use [build and test](references/build-test.md) for the relevant sequence.
-For RPC mode differences, gas fit, action admission, pending reconciliation, or
-private-state reader failures, read [native diagnostics](references/native-diagnostics.md)
-before changing runner gates or settlement status.
-For model/reader disagreement or repeated admission overhead, use
-[runner verification](references/runner-verification.md).
+When the requested result needs native execution and authority permits it, use a
+bounded run on the exact candidate. Keep fresh state, nonce, fee, expiry, fit and
+spending checks, recovery capacity, canonical receipts and independent accounting.
+Stop on privacy/accounting failure, an unexplained revert, uncertain send or failed
+fit. Reconcile before retry; never weaken a guard merely to make a run pass.
 
-1. Check actual library interfaces, imports, storage layout, and mock operations.
-   Compile the complete affected linked graph, including deployment constructors.
-2. Run focused arithmetic and lifecycle checks. Include failure and recovery paths.
-   Describe what the mock implements and what it cannot establish.
-3. When native testing is in scope and authorized, bind a finite run to the exact
-   candidate and current chain state. Measure complete cost, peak transaction
-   usage, latency, and actual accounting. Retain recovery capacity.
-4. Stop on a privacy or accounting failure, unexplained revert, uncertain send, or
-   failed transaction fit. Reconcile before retry. Do not remove a guard to obtain
-   a successful estimate or increase bounds without applicable authority.
-5. Run the affected integration subset at a stable checkpoint. Keep local,
-   native, user-acceptance, and release evidence separate.
+Reuse unchanged accepted evidence within its proven scope. Broaden checks only
+for an affected risk or an explicit project gate. Once required checks pass,
+continue to the requested working path; do not start another general proof cycle.
+Preserve user-acceptance and release gates, including security review when required.
+The skill grants no permission to sign, deploy, spend, publish or change trust rules.
 
-Do not copy a gas target, module layout, permission, or release rule from another
-project. Renew affected evidence when a source, library, build, or runtime changes.
+## Diagnose a specific failure
 
-## Diagnose the exact failure
+Use [lessons and diagnosis](references/lessons.md) for a mismatch with a mock,
+estimate or earlier run. Check the exact compiled/deployed candidate and preserve
+the failed evidence. Repair the demonstrated cause with a focused regression.
+An unresolved cause must stay unresolved; a selector alone does not identify it.
 
-Use [lessons and diagnosis](references/lessons.md) when execution differs from a
-mock, estimate, earlier run, or source expectation. Treat error selectors and
-timestamps as observations. A selector alone does not prove the failing frame.
+Read [native diagnostics](references/native-diagnostics.md) only for relevant RPC,
+gas-fit, admission, reader or pending-settlement problems. Read
+[runner verification](references/runner-verification.md) for a model/reader mismatch
+or measured runner overhead. Keep diagnostic work bounded by the build task.
 
-Preserve failed-case evidence. Use a minimal reproducer or existing regression.
-Fix the demonstrated cause and rerun the affected cases. An unresolved diagnostic
-must remain unresolved; do not convert it into a universal GC rule.
+## Finish with a usable result
 
-## Examples and reporting
+Report the behavior delivered, checks, measured cost changes, remaining limits
+and next action in the existing task or checkpoint. Keep local, native and release
+claims distinct. Keep secrets and private inputs out of reports.
 
-[PrivateCounter](assets/examples/PrivateCounter.sol) is a small version-bound
-example of signed input types, persisted system ciphertext, user ciphertext, and
-explicit overflow rejection. It is a counter, not a token or custody template.
-Its local tests use a deliberately limited model. Read [validation scope](VALIDATION.md)
-before reusing its results.
-
-Report changed behavior, exact inputs, checks and terminal results, disclosed
-information, remaining limits, and the next action. Keep private keys, AES keys,
-signed private inputs, credentials, and private plaintext out of artifacts.
-
-At a stable build checkpoint, apply the [learning rule](references/lessons.md#keeping-the-skill-useful)
-when new evidence can improve future work. Keep maintenance within the task
-authority and preserve the requested build result.
+[PrivateCounter](assets/examples/PrivateCounter.sol) is a small version-bound GC
+example, not a custody template. Read [validation scope](VALIDATION.md) before
+reusing its local results. Apply the [learning rule](references/lessons.md#keeping-the-skill-useful)
+when useful evidence warrants a small skill correction; keep maintenance from
+displacing the requested build.

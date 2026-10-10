@@ -1,4 +1,4 @@
 interface:
   display_name: "COTI GC Build and Test"
-  short_description: "Build and test COTI privacy contracts with evidence"
-  default_prompt: "Use $coti-gc-build-test to build, test, or diagnose this COTI privacy contract with scoped evidence."
+  short_description: "Build correct and efficient COTI privacy contracts"
+  default_prompt: "Use $coti-gc-build-test to build or improve this COTI privacy contract with focused checks for the changed behavior."

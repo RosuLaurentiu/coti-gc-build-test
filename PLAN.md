@@ -2,10 +2,10 @@
 
 Requested 2026-10-06: create a separate skill project and GitHub repository.
 
-Current status, 2026-10-08: v0.1.7 keeps the general build/test workflow and adds
-focused diagnostic lessons in its references. The checkpoints below record skill
-development, not readiness of contracts built with it. See [validation](VALIDATION.md)
-for the checks run at each update and the limits of earlier results.
+Current status, 2026-10-10: v0.1.8 refocuses the skill on correct, private and
+efficient contract delivery. Checks support the changed behavior; diagnostic and
+maintenance work stay conditional. See [validation](VALIDATION.md) for checks and
+limits. These checkpoints describe skill development, not contract readiness.
 
 ## Build now
 
@@ -105,6 +105,17 @@ historical build evidence retain their recorded scope.
 - Used the existing metadata and link checks plus a review of the changed guidance.
   No new independent evaluation score or native result is claimed. See the
   [validation record](VALIDATION.md).
+
+## v0.1.8 checkpoint
+
+- Made contract design, correct GC use, gas efficiency and usable delivery the
+  entrypoint's purpose; kept checks proportional to the affected risk.
+- Shortened runner-history guidance and removed routine pressure for new wrappers,
+  evidence packages and skill evaluation campaigns. Reuse existing interfaces.
+- Preserved privacy, exact accounting, fresh native admission and recovery rules.
+  No example code, dependency or project-specific evidence changed.
+- Passed metadata and link checks; reviewed the changed instructions.
+  Subsequent product use must establish whether it reduces wasted work.
 
 ## Before production
 

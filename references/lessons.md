@@ -74,16 +74,16 @@ lesson. Keep it only if it changes a future decision. Record the supporting
 source or reproducer, applicable versions, and the expected behavior. An
 unresolved hypothesis remains in project evidence.
 
-Finish the requested build step before doing skill maintenance. Within the
-current task's authority, edit the repository source, preserve local changes,
-and correct the relevant reference instead of adding duplicate rules. Add or
-update a focused reproducer or decision replay when the guidance changes
-behavior. Run affected checks and reuse unchanged evidence. Record results and
-limits, version the change, and refresh the installed copy from that validated
-revision. Publication and installation still require applicable user authority;
-this skill does not grant it. If maintenance is outside the task's scope, record
-one concise improvement candidate in the existing checkpoint and continue the
-build.
+Finish the requested build step before skill maintenance. Correct or shorten the
+existing guidance when possible. For instruction-only edits, metadata/link checks
+and a content review normally suffice. Use a focused behavioral check when a
+specific risky or ambiguous decision needs it; do not start a general evaluation
+campaign for each lesson. Executable changes need their affected checks.
+
+Within maintenance authority, preserve local changes, record the update and limits,
+version it, and refresh the installed copy. Publishing needs applicable user
+authority. Otherwise note one improvement candidate in the existing checkpoint
+and continue building. No separate lesson database or recurring review gate.
 
 Keep private project artifacts, wallets, secrets, product policy, operating
 measurements and live permissions in their owning project. For shared cases,
@@ -93,7 +93,6 @@ and this package's own test results can remain. Check every distributed file,
 including examples and evaluation answers. A cleanup of current files does not
 remove earlier copies from Git history.
 
-Put portable version-specific details in references. Remove obsolete or
-redundant guidance through a recoverable Git change. A skill should become more
-useful, not merely longer. Do not create a separate lesson database, background
-job, or review gate for every test.
+Keep portable version details in references. Remove obsolete or redundant
+guidance through a recoverable Git change. Judge the skill by better contract
+decisions, usable delivery and measured efficiency, not its length or test count.

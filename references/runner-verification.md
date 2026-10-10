@@ -1,7 +1,8 @@
 # Runner verification
 
-Use this for disagreement between local and native verification, or measured
-runner overhead. Preserve the exact candidate and current authority.
+Use this only for a model/reader mismatch or measured runner overhead. Repair
+the affected path with existing interfaces, then return to the requested build.
+This reference does not require a new verification subsystem.
 
 ## Independent expected state and observation
 
@@ -29,11 +30,12 @@ protected-state assertions. Cover other lifecycle actions that change the same
 field, unaffected markets, and mutations of either or both copies. Matching two
 copies is insufficient if both can contain the same wrong value.
 
-If a mined transaction remains unverified, keep its original manifest, source and
-journal history. Use a versioned repair and a supported read-only reconciliation
-of that exact hash. Record the evidence amendment without rewriting the original
-failure. A local pass does not accept native accounting or resume the batch;
-future sends need their applicable fresh admission. Do not resend to fix a check.
+If a mined transaction remains unverified, preserve its original inputs, source
+identity and journal. Repair the supported checker and reconcile that exact hash
+read-only. Use existing version control or required snapshots to retain old source;
+a new runner version is needed only when a consumer requires different behavior.
+Keep the original failure. A local pass does not accept native accounting or
+resume sends. Do not resend to fix a check; future sends need fresh admission.
 
 ## Measured admission overhead
 
@@ -51,36 +53,25 @@ transport option under test, keep timing-only metadata separate, and measure
 complete latency as well as request counts. A provider setting is not a universal
 optimization or proof that the whole operation meets its deadline.
 
-When repeated verification of immutable accepted history is the proven cost,
-consider reusing its result only with a reviewed complete dependency inventory.
-Bind source and source-pin sets, saved candidate inputs, referenced paths,
-manifests, journals, reconciliation records, terminal results, build information
-and artifacts actually used. Check the inventory before and after initial
-semantic verification, then verify content digests on reuse. Reject missing,
-changed, added or redirected dependencies; an mtime or prior "accepted" label
-is insufficient. A changed source/read set needs renewed review.
+First remove a proven duplicate within the affected operation. Reuse its verified
+immutable result through the existing interface when the input and dependency
+contents and relevant canonical proof still match. Preserve independent observations.
+Reject reuse on changed inputs or failed checks; a timestamp or prior accepted
+label is insufficient. Use existing identity records rather than building a new recursive
+inventory or cache unless that is the specific task.
 
-Keep the accepted result immutable and invalidate its context on drift or read
-failure. This must not cache current permission, manifest expiry, chain/head,
-nonce, balance, fees, private state, action fit or accounting. Keep those checks
-at their required live boundaries.
+Keep fresh permission, expiry, chain/head, nonce, balance, fees, private state,
+action fit and accounting at their required live boundaries. Before consolidating
+a current-state read, check every consumer: it may supply calldata, model input or
+authorization. Remove only the comparison proved redundant for that exact action.
+Retain final signing checks and independent post-receipt accounting.
 
-Before consolidating repeated current-state reads, trace every use of the earlier
-result, including calldata, model inputs, refresh hooks and authorization. Remove
-only a comparison proved redundant for the named action and exact call. Do not
-remove a read that supplies a distinct decision or execution input. Preserve the
-complete final fresh check before signing, fresh admission and fit, and independent
-post-receipt accounting. Other actions retain their required read schedule. Test
-state drift and altered inputs; local ordering tests do not prove native latency.
-This is not permission to cache current state or relax deadlines.
+Keep active-run inputs frozen. Integrate repairs after pending/funded reconciliation
+at a safe checkpoint. Run focused drift and mutation cases for the affected reuse
+or read boundary. Preserve required historical evidence; do not create another
+wrapper or full evidence package for each repair.
 
-Keep an active run's inputs frozen. Integrate a change after a safe terminal
-checkpoint and pending/funded reconciliation, with new source identities and
-admission as required. Test dependency and saved-input mutations, unchanged-mtime
-edits, initialization races, returned-object mutation and rejection after drift.
-Reuse existing interfaces instead of adding a general caching framework.
-
-A faster local guard is component evidence. Check the integrated validator and
-measure a permitted complete run before claiming lower transaction latency or
-that the full batch fits its deadline. Never extend expiry or remove fresh
-checks to make a timing result pass.
+Measure the complete affected path before claiming lower latency or deadline fit.
+Local timing remains component evidence. Never extend expiry or remove fresh
+checks to make a timing result pass. Stop this optimization when it resolves the
+named build blocker or delivers the requested measured improvement.

@@ -1,8 +1,29 @@
 # Validation scope
 
-Latest guidance validation: 2026-10-08. The skill example's executable local
+Latest guidance validation: 2026-10-10. The skill example's executable local
 checks were last run on 2026-10-06. It has no native COTI result. Diagnostic
 cases are evaluated offline, not replayed on-chain.
+
+## v0.1.8 update
+
+Refocused the entrypoint and usage prompt on contract quality, privacy and gas
+efficiency. Simplified conditional runner verification and skill maintenance.
+Existing privacy, accounting, native admission and recovery protections remain.
+
+- Skill metadata validation passed; local link check passed (1 test, 0 failures).
+- Content review checked delivery scope, conditional use of diagnostic references,
+  reuse of existing tools, and retained privacy/accounting/recovery protections.
+- The added content contains general guidance and no private project evidence.
+- The example, executable tests and dependency graph are unchanged. Only package
+  version fields changed in the lock; earlier executable checks were not rerun.
+
+The entrypoint is 90 lines, down from 97; runner guidance is 77, down from 86.
+These counts describe the edit, not its effectiveness. Future product use must
+show whether it reduces wasted work. No new behavioral evaluation, native result
+or performance improvement is claimed.
+
+v0.1.8 package-lock SHA-256:
+`75fa5de6a2e61c3e28efbab5ac92ac73812b0743ce8ca938a530fb0fdc6da9d6`.
 
 ## v0.1.7 update
 

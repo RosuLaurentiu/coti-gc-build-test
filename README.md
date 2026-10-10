@@ -1,10 +1,10 @@
 # COTI GC Build and Test
 
-A Codex skill for custom COTI privacy-contract development, testing, and diagnosis.
+A Codex skill for building correct, private and efficient COTI smart contracts.
 
-Start with [SKILL.md](SKILL.md). It covers GC value lifetimes, arithmetic,
-accounting, build identity, mock limitations, native admission, and recovery.
-Detailed guidance loads only when needed.
+Start with [SKILL.md](SKILL.md). It helps with contract design, GC value lifetimes,
+private arithmetic, exact accounting and complete gas cost. Focused checks and
+diagnostic references support the requested build; load them only when relevant.
 
 The skill uses current project rules and tools. It carries no wallets, secrets,
 live permissions, product parameters, or production-readiness claim.
